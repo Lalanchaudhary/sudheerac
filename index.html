@@ -19,6 +19,25 @@
 
   gtag('config', 'AW-18294667304');
 </script>
+<!-- Event snippet for Outbound click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18294667304/-ZFuCKb-1skcEKjwyZNE',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 </head>
 <body>
   <!-- Header -->
@@ -391,6 +410,18 @@
       </div>
     </section>
   </main>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/919821649811?text=i%20want%20to%20know%20more.."
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Sudheer AC Services on WhatsApp"
+    onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion(this.href) : true;"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
 
   <!-- Footer -->
   <footer class="footer">
